@@ -8,4 +8,4 @@ import '@/assets/css/global.css'
 import ElementPlus from 'element-plus'
 import zhCn from 'element-plus/es/locale/lang/zh-cn'
 
-createApp(App).use(store).use(router).use(ElementPlus, {locale: zhCn, size: 'small'}).mount('#app')
+createApp(App).use(store).use(router).use(ElementPlus, {locale: zhCn,size:"small"}).mount('#app')
