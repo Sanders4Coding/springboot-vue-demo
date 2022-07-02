@@ -76,4 +76,16 @@ public class UserController {
         userMapper.deleteById(id);
         return Result.success();
     }
+
+
+    @PostMapping("/login")
+    public Result<?> login(@RequestBody User user){
+        User res = userMapper.selectOne(Wrappers.<User>lambdaQuery()
+                .eq(User::getUserName, user.getUserName())
+                .eq(User::getPassWord, user.getPassWord()));
+        if(res==null){
+            return Result.error("-1","用户名或密码错误");
+        }
+        return Result.success(res);
+    }
 }
