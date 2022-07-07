@@ -82,6 +82,9 @@
                 </template>
             </el-dialog>
         </div>
+<!--        图表-->
+        <echart/>
+
     </div>
 </template>
 
@@ -89,6 +92,8 @@
     import {ref} from 'vue'
     import request from "../../utils/request";
     import axios from 'axios'
+    import chart from "@/views/chart";
+
 
     const small = ref(true)
     const background = ref(true)
@@ -97,7 +102,9 @@
 
     export default {
         name: 'HomeView',
-        components: {},
+        components: {
+            "echart":chart
+        },
         created() {
             this.load()
         },
